@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
         padding: 16,
         fontSize: 16,
         width: 250,
-        marginRight: 12
+        // marginRight: 8
     },
     buttonText: {
         color: "#fff",
@@ -42,6 +42,14 @@ export const styles = StyleSheet.create({
         width: "100%",
         marginTop: 36,
         marginBottom: 42,
-        flexDirection: "row"
+        flexDirection: "row",
+        gap: 7
     },
+    listEmptyText: {
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: 14,
+        color: "#fff",
+        textAlign: "center"
+    }
 });
