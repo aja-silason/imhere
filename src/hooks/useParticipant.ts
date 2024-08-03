@@ -1,14 +1,10 @@
 import { useState } from "react";
 import { Alert } from "react-native";
 
-const useCreateParticipant = () => {
+const useParticipant = () => {
 
-
-    const [participants, setParticipant] = useState(["Abel"]);
-
+    const [participants, setParticipant] = useState<string[]>([]);
     const [participantName, setParticipantName] = useState<string>("");
-
-
 
     const handleChangeParticipantName = (value: string) => {
         setParticipantName(value);
@@ -41,4 +37,4 @@ const useCreateParticipant = () => {
 
 }
 
-export default useCreateParticipant;
+export default useParticipant;

@@ -1,17 +1,16 @@
 import { Participant } from "@/src/components/Participant";
 import { styles } from "./styles";
-import { Alert, FlatList, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { useRef, useState } from "react";
-import useCreateParticipant from "@/src/hooks/useCreateParticipant";
+import { FlatList, Text, TextInput, TouchableOpacity, View } from "react-native";
+import useParticipant from "@/src/hooks/useParticipant";
 
 export function Home(){
 
-    const {handleChangeParticipantName, handleParticipantAdd, handleParticipantRemove, participantName, participants} = useCreateParticipant();
+    const {handleChangeParticipantName, handleParticipantAdd, handleParticipantRemove, participantName, participants} = useParticipant();
 
     return (
         <View style={styles.container}>
-            <Text style={styles.eventName}>Nome do Evento</Text>
-            <Text style={styles.eventDate}>Sexta, 4 de Novembro de 2022.</Text>
+            <Text style={styles.eventName}>Tarefas diárias de Anania Augusto</Text>
+            <Text style={styles.eventDate}>Agosto de 2024.</Text>
 
             <View style={styles.inputContainer}>
                 <TextInput
@@ -35,7 +34,7 @@ export function Home(){
                 )}
                 showsVerticalScrollIndicator={false}
                 ListEmptyComponent={() => (
-                    <Text style={styles.listEmptyText}>Ninguém chegou ainda no evento. Adicione participante na lista.</Text>
+                    <Text style={styles.listEmptyText}>Sem tarefas até ao momento{"\n"} adicione as suas actividades diárias</Text>
                 )}
             />
 
