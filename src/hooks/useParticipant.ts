@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type Item = {
     id: number,
-    participantName: string
+    task: string
 }
 
 const useParticipant = () => {
@@ -23,9 +23,16 @@ const useParticipant = () => {
 
     const save = async () => {
         try{
+            
             const payload: Item = {
                 id: Date.now(),
-                participantName
+                task: participantName
+            }
+            const validation: Array<keyof Item> = ["id", "task"];
+            for(const key of validation){
+                if(payload[key] == undefined || payload[key] == "" || payload[key] == null || payload[key].toString().length <= 4){
+                    return Alert.alert("Aviso", "Adicione uma tarefa no campo vazio, com no mínimo 4 caráctere.");
+                }
             }
             const newData = [...dt, payload]
             setDt(newData);

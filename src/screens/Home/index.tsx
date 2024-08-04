@@ -38,7 +38,7 @@ export function Home(){
                         data={dt}
                         keyExtractor={(item) => item.id.toString()} 
                         renderItem={({item}) => (    
-                            <Participant name={item.participantName} onRemove={() => handleParticipantRemove(item.id)}/>
+                            <Participant name={item.task} onRemove={() => handleParticipantRemove(item.id)}/>
                         )}
                         showsVerticalScrollIndicator={false}
                         ListEmptyComponent={() => (
