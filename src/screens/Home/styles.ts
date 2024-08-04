@@ -10,11 +10,15 @@ export const styles = StyleSheet.create({
         color: "#fdfcfe",
         fontSize: 24,
         fontWeight: "bold",
-        marginTop: 48
+        marginTop: 10,
     },
     eventDate: {
+        width: "100%",
+        marginTop: 40,
         color: "#6b6b6b",
         fontSize: 16,
+        alignItems: "flex-end",
+        justifyContent: "flex-end" 
     },
     input: {
         height: 56,
